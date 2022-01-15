@@ -1,0 +1,55 @@
+html{
+    font-size:14px;
+}
+
+body{
+    --body-padding:1.5rem;
+    margin:0;
+}
+
+#grid-pagina{
+    display:grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: "welcome   welcome  " 
+                         "promotii promotii  "
+                         "anunturi anunturi"
+                         "orar     orar     "
+                         "orar     orar      "
+                         "fig1     produse   "
+                         "fig2     produse   "
+                         "fig3     produse   "
+                         "index-intrebari     index-intrebari ";
+    padding:4%;
+    grid-gap:2rem;
+}
+
+p.intro{
+    text-align: left;
+    text-align-last: left;
+}
+
+.fg-img img{
+    border-radius:50%;
+    box-shadow:0 0 0.5rem grey;
+}
+
+.intro-oferte div{
+    border:1px solid grey;
+    width:4.7rem;
+    margin-right:0.4rem;
+    line-height:40px;
+    max-height:40px;
+
+    font-family: 'Dancing Script', cursive;
+    font-size:1.2rem;
+}
+
+iframe{
+    max-width:700px;
+    width:100%;
+}
+
+
+#container-video{
+    display: none;
+}

@@ -1,0 +1,82 @@
+{
+    "cale_galerie":"../resurse/imagini/",
+    "imagini":[
+        {
+            "fisier":"photo1.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"3",
+            "descriere":"poza1"
+        },
+        {
+            "fisier":"photo2.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"1",
+            "descriere":"poza2"
+        },{
+            "fisier":"photo3.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"0",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo4.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"2",
+            "descriere":"pozannnn4"
+        },{
+            "fisier":"photo5.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"3",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo6.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"0",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo7.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"1",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo8.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"2",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo9.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"3",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo10.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"1",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo11.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"2",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo12.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"0",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo13.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"3",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo14.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"1",
+            "descriere":"poza3"
+        },{
+            "fisier":"photo15.jpg",
+            "titlu":"poza nr 1",
+            "sfert_ora":"0",
+            "descriere":"poza3"
+        }
+    ]
+}

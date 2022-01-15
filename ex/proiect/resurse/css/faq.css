@@ -1,0 +1,63 @@
+#index-intrebari{
+    counter-reset:ct; /*counterul ct se resetează la 0 când întâlnește elementul cu id-ul index-intrebari*/
+}
+ 
+#index-intrebari summary{
+    position: relative;
+    border:1px solid gray;
+    padding:0.5em;
+    border-radius:2rem;
+    border-bottom-left-radius:0;
+    margin-bottom:0.5rem;
+    
+    list-style-type: none;
+    
+    /*border-bottom:5px solid transparent;*/
+    border-left:5px solid var(--culoare-mov);
+    }
+
+#index-intrebari summary::-webkit-details-marker {
+    display:none;
+  }
+#index-intrebari summary::after{
+    display:block;
+    position:absolute;
+    top:-0.3rem;
+    left:-1rem;
+    counter-increment:ct; /*incrementez cu 1 counterul, inaintea fiecarui element de tip summary
+    din interiorul elementului cu id-ul index-intrebari*/
+    --dim-nr:1.5rem;
+    width:var(--dim-nr);
+    height:var(--dim-nr);
+    line-height:var(--dim-nr);
+    text-align:center;
+    border-radius:1rem;
+
+    color:white;
+    background-color:var(--culoare-roz-inchis);
+    content:counter(ct) "."; /* pun in continutul elementului generat (::before) valoarea counterului*/
+}
+
+summary::before{
+    display: inline-block;
+    background-image: url('../imagini/icon-prajitura-mini.png');
+    background-position:center center;
+    background-size: contain;
+    background-repeat:no-repeat;
+    height:1rem;
+    width:1rem;
+    transform: rotateZ(90deg);
+    content:" ";
+    margin-right:0.5rem;
+
+}
+
+
+#index-intrebari details[open] summary::before{
+    transform: rotateZ(0deg);
+}
+
+details p{
+    border-left:5px inset var(--culoare-roz-inchis-t);
+    padding-left:0.5rem;
+}

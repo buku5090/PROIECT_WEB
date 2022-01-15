@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta name="keywords" content="husa,telefon,silicon,personalizata,samsung,iphone,huawei,xiaomi,htc">
+        <meta name="description" content="Cele mai bune huse pentru telefonul tau, la cel mai bun pret.">
+
+        <%- include("../fragmente/head.ejs") %>
+
+        <link rel="stylesheet" href="/resurse/css/produs_unic.css">
+
+        <title>Husse</title>
+        
+    </head>
+    <body>
+        <%- include("../fragmente/header.ejs") %>
+    <main>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <figure class="imag-produs">
+                        <img  src="/resurse/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>
+
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> RON</span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Material: <span class="material"><%- locals.prod.material %> </span></p>
+                    <p>Tip husa: <span class="tip"><%- locals.prod.tip %> </span></p>
+                    <p>Diagonala: <span class="diagonala"><%- locals.prod.diagonala %> inch </span></p>
+                    <p>Marca: <span class="marca"><%- locals.prod.marca %> </span></p>
+                    <p>Model: <span class="model"><%- locals.prod.model %> </span></p>
+                    <p>Culori disponibile: <span class="culori_disponibile"><%- locals.prod.culori_disponibile %> </span></p>
+                    <p>Rezistenta soc: <span class="rez_soc"><%- locals.prod.rezistenta_soc %> </span></p>
+                    <p>Greutate: <span class="greutate"><%- locals.prod.greutate %>g </span></p>
+                    
+                    <p>Data adăugare model: <span class="data"><%- locals.prod.data_lansare %> </span></p>
+                    
+                </article>
+            
+        </section>
+    </main>
+        <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>

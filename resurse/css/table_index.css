@@ -1,0 +1,39 @@
+
+#section_table{
+    align-items: center;
+    padding: 30px;
+  }
+  
+  #table-orar{
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  
+  tbody tr:nth-child(odd){
+    background-color: #4C8BF5;
+    color: #fff;
+    transition: all 2s;
+  }
+  
+  tbody tr:hover:nth-child(odd){
+    background-color: black;
+  }
+  
+  tbody tr:nth-child(even){
+    background-color: #8f657d;
+    color: #000000;
+    transition: all 1s;
+  }
+  
+  tbody tr:hover:nth-child(even){
+    background-color: black;
+    color: #fff;
+  }
+  
+  
+  #table-orar td, #table-orar th{
+    border:1px solid black;
+    padding:0.2rem;
+  }
+  

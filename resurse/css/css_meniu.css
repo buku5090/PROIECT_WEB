@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#lista_produse{
+    display: none;
+    position: absolute;
+    background-color: black;
+    
+}
+
+
+#produse_meniu{
+    transition: all 0.5s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+#produse_meniu:hover #lista_produse{
+    display: block;
+}

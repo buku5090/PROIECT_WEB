@@ -1,0 +1,42 @@
+html{
+    font-size:11px;
+}
+
+body{
+    --body-padding:0px;
+    
+}
+h1{
+    text-align: center;
+}
+
+#grid-pagina{
+    display:block;
+}
+
+section{
+    margin-top:1rem;
+}
+
+.taburi-iframe a{
+    text-decoration:none;
+    width:75px;
+}
+
+
+.intro-oferte div{
+    border:1px solid grey;
+    margin-right:0.2rem;
+    max-height:35px;
+    line-height:35px;
+}
+
+.fg-img{
+    text-align:center;
+    margin-top:1rem;
+}
+
+.fg-img img{
+    width:50%;
+    border-radius:5px;
+}

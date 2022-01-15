@@ -1,0 +1,39 @@
+#orar{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+#tab-orar{
+    counter-reset: ct-orar;
+    --tip-zi:"Lucr";
+    text-align:center;
+}
+
+
+#tab-orar td, #tab-orar th{
+    border:1px solid var(--culoare-roz-inchis);
+    padding:0.2rem;
+    
+}
+#tab-orar{
+    border-collapse:collapse;
+}
+
+
+#tab-orar tbody tr{
+    counter-increment: ct-orar;
+}
+#tab-orar tbody tr:nth-child(6){
+    
+    counter-reset: ct-orar;
+}
+#tab-orar tbody tr:nth-child(n+6){
+    --tip-zi:"W";
+} 
+#tab-orar tr td:first-child{
+    background:var(--culoare-roz-inchis-t);
+}
+#tab-orar tr td:first-child::before{
+    content: var(--tip-zi) counter(ct-orar);
+}

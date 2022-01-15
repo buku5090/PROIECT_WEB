@@ -1,0 +1,416 @@
+@use 'sass:list';
+@use 'sass:math';
+
+$lista_transformari: ((top:0px ,left:0px),(top:-350px, left:0px));
+$indice: math.random(list.length($lista_transformari));
+
+$transformare_i: list.nth(list.nth($lista_transformari,$indice),1);
+$transformare_f: list.nth(list.nth($lista_transformari,$indice),2);
+
+#derulant{
+  display:flex;
+  flex-direction: column;
+    flex-wrap: nowrap;
+  position: absolute;
+  animation-name: gal1;
+}
+
+#derulant figure:nth-child(1){
+  animation-name: fig1;
+}
+#derulant figure:nth-child(2){
+  animation-name: fig1;
+}
+
+@keyframes fig1 {
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.galerie{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 350px;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.galerie figcaption{
+  position:absolute;
+  bottom:0;
+  background:rgba(255,255,255,0.7);
+  width:100%;
+  text-align:center;
+}
+
+
+.galerie figure{
+  position:relative;
+  width:400px;
+  height:350px;
+}
+
+#derulant:hover{
+  animation-play-state: paused;
+}
+
+#galerie-animata #derulant{
+  display: grid;
+  width:1200px;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: 350px 350px 350px;
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
+  position: absolute;
+  top:0;
+  left:0;
+  animation-name: animatie_gal;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 30s;
+}
+.galerie figcaption{
+  bottom: 0px;
+}
+
+
+@if 9==9 {
+
+  @keyframes animatie_gal {
+    0%{
+      top:0px;
+      left:0;
+    
+    }
+    11.5%{
+      top:-350px;
+      left:0;
+    }
+    
+    12.5%{
+      top:-350px;
+      left:0;
+    }
+    24%{
+      top:-350px;
+      left: -800px;
+    }
+    25%{
+      top:-350px;
+      left: -800px;
+    }
+    
+    36.5%{
+      top:-350px;
+      left: -400px;
+    }
+    37.5%{
+      top:-350px;
+      left: -400px;
+    }
+    49%{
+      top:0px;
+      left: -400px;
+    }
+    50%{
+      top:0px;
+      left: -400px;
+    }
+    61.5%{
+      top:0px;
+      left: -800px;
+    }
+    62.5%{
+      top:0px;
+      left: -800px;
+    }
+    74%{
+      top:-700px;
+      left: -800px;
+    }
+    75%{
+      top:-700px;
+      left: -800px;
+    }
+    86.5%{
+      top:-700px;
+      left: 0px;
+    }
+    87.5%{
+      top:-700px;
+      left: 0px;
+    }
+    99%{
+      top:-700px;
+      left: -400px;
+    }
+    100%{
+      top:-700px;
+      left: -400px;
+    }
+  }
+
+}
+
+@if 9==12 {
+
+  @keyframes animatie_gal {
+    //poza1
+    0%{
+      top:0px;
+      left:0;
+    
+    }
+    //poza2
+    8.09090909091%{
+      top:-350px;
+      left:0;
+    }
+    9.09090909091%{
+      top:-350px;
+      left:0;
+    }
+    //poza3
+    17.1818181818%{
+      top:-350px;
+      left: -800px;
+    }
+    18.1818181818%{
+      top:-350px;
+      left: -800px;
+    }
+    //poza4    
+    26.2727272727%{
+      top:-350px;
+      left: -400px;
+    }
+    27.2727272727%{
+      top:-350px;
+      left: -400px;
+    }
+    //poza5
+    35.3636363636%{
+      top:0px;
+      left: -400px;
+    }
+    36.3636363636%{
+      top:0px;
+      left: -400px;
+    }
+    //poza6
+    44.4545454545%{
+      top:0px;
+      left: -800px;
+    }
+    45.4545454545%{
+      top:0px;
+      left: -800px;
+    }
+    //poza7
+    53.5454545455%{
+      top:-700px;
+      left: -800px;
+    }
+    54.5454545455%{
+      top:-700px;
+      left: -800px;
+    }
+    //poza8
+    62.6363636364%{
+      top:-700px;
+      left: 0px;
+    }
+    63.6363636364%{
+      top:-700px;
+      left: 0px;
+    }
+    //poza9
+    71.7272727273%{
+      top:-700px;
+      left: -400px;
+    }
+    72.7272727273%{
+      top:-700px;
+      left: -400px;
+    }
+    //poza10
+    80.8181818182%{
+      top:-1050px;
+      left: -400px;
+    }
+    81.8181818182%{
+      top:-1050px;
+      left: -400px;
+    }
+    //poza11
+    89.9090909091%{
+      top:-1050px;
+      left: 0px;
+    }
+    90.9090909091%{
+      top:-1050px;
+      left: 0px;
+    }
+    //poza12
+    99%{
+      top:-1050px;
+      left: -800px;
+    }
+    100%{
+      top:-1050px;
+      left: -800px;
+    }
+  }
+
+}
+ 
+@if 9==15 {
+
+  
+  @keyframes animatie_gal {
+    //poza1
+    0%{
+      top:0px;
+      left:0;
+    
+    }
+    //poza2
+    6.14285714286%{
+      top:-350px;
+      left:0;
+    }
+    7.14285714286%{
+      top:-350px;
+      left:0;
+    }
+    //poza3
+    13.2857142857%{
+      top:-350px;
+      left: -800px;
+    }
+    14.2857142857%{
+      top:-350px;
+      left: -800px;
+    }
+    //poza4    
+    20.4285714286%{
+      top:-350px;
+      left: -400px;
+    }
+    21.4285714286%{
+      top:-350px;
+      left: -400px;
+    }
+    //poza5
+    27.5714285714%{
+      top:0px;
+      left: -400px;
+    }
+    28.5714285714%{
+      top:0px;
+      left: -400px;
+    }
+    //poza6
+    34.7142857143%{
+      top:0px;
+      left: -800px;
+    }
+    35.7142857143%{
+      top:0px;
+      left: -800px;
+    }
+    //poza7
+    41.8571428571%{
+      top:-700px;
+      left: -800px;
+    }
+    42.8571428571%{
+      top:-700px;
+      left: -800px;
+    }
+    //poza8
+    49%{
+      top:-700px;
+      left: 0px;
+    }
+    50%{
+      top:-700px;
+      left: 0px;
+    }
+    //poza9
+    56.1428571429%{
+      top:-700px;
+      left: -400px;
+    }
+    57.1428571429%{
+      top:-700px;
+      left: -400px;
+    }
+    //poza10
+    63.2857142857%{
+      top:-1050px;
+      left: -400px;
+    }
+    64.2857142857%{
+      top:-1050px;
+      left: -400px;
+    }
+    //poza11
+    70.4285714286%{
+      top:-1050px;
+      left: 0px;
+    }
+    71.4285714286%{
+      top:-1050px;
+      left: 0px;
+    }
+    //poza12
+    77.5714285715%{
+      top:-1050px;
+      left: -800px;
+    }
+    78.5714285715%{
+      top:-1050px;
+      left: -800px;
+    }
+    //poza13
+    84.7142857143%{
+      top:-1400px;
+      left: -800px;
+    }
+    85.7142857143%{
+      top:-1400px;
+      left: -800px;
+    }
+    //poza14
+    91.8571428572%{
+      top:-1400px;
+      left: -400px;
+    }
+    92.8571428572%{
+      top:-1400px;
+      left: -400px;
+    }
+    //poza15
+    99%{
+      top:-1400px;
+      left: 0px;
+    }
+    100%{
+      top:-1400px;
+      left: 0px;
+    }
+  }
+
+}

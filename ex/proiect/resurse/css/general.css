@@ -1,0 +1,337 @@
+@import "video.css";
+@import "nav.css";
+@import "orar.css";
+@import "faq.css";
+@import "galerie-statica.css";
+@import "galerie-statica-500.css";
+@import "calendar.css";
+
+/* va rog urmariti comentariile pe care le-am adaugat pentru voi*/
+/* acesta este stilul pentru ecran mare*/
+
+html{
+    /*am setat font-size-ul radacinii; unitatile in rem vor fi relative la acest font-size*/
+    font-size:16px;
+    
+
+}
+body{
+    --culoare-mov:#C886FF;
+	--culoare-roz-inchis:rgb(229,173,198);
+	--culoare-roz-inchis-t:rgb(229,173,198,0.5);
+    --cl-marcare:rgb(255,219,235);
+    --cl-light-t:rgba(255,255,255,0.7);
+    --cl-text:black;
+    --imag-body-backgr:url("../imagini/background-bomboane.jpg");
+    --gradient-body:linear-gradient(transparent, transparent 30%, white 50%, transparent 70%, transparent);
+}
+
+body.dark{
+    --culoare-mov:rgb(31, 31, 31);
+	--culoare-roz-inchis:rgb(64,27,66);
+	--culoare-roz-inchis-t:rgb(64,27,66,0.5);
+    --cl-marcare:rgb(81,43,81,0.5);
+    --cl-light-t:rgba(255,255,255,0.2);
+    --cl-text:white;
+    text-shadow:0px 0px 2px black,0px 0px 1px black,0px 0px 1px black;
+    --imag-body-backgr:url("../imagini/background-bomboane-dark.jpg");
+    --gradient-body:linear-gradient(transparent, transparent 25%, rgba(255,255,255,0.5) 50%, transparent 75%, transparent);
+}
+
+body{
+    margin-top:0;
+    margin-bottom:0;
+    --body-padding:3rem;
+
+    --padding-intern:4%;
+    color:var(--cl-text);
+    /*am adaugat doua imagini de background separandu-le cu virgula*/
+    background-image:var(--gradient-body), var(--imag-body-backgr);
+    background-repeat: no-repeat;
+
+    /* background-ul va ramane fix cand dam scroll*/
+    background-attachment: fixed;
+
+    /*imaginea de background sa acopere tot containerul*/
+    background-size: cover;
+    padding-left:var(--body-padding);
+    padding-right:var(--body-padding);
+    padding-top:0;
+    padding-bottom:0;
+
+    /*nu permite body-ului sa se micsoreze mai mult de atat
+    deoarece pagina nu ar mai putea fi parcursa
+    trebuie mereu setata o latime minima pentru pagina
+    pentru a nu risca sa avem afisat cate un singur cuvant pe rand...*/
+    min-width:330px;/*latimea minima trebuie sa fie mai mica decat orice latime de dispozitiv pentru a nu avea scroll orizontal*/
+}
+
+
+
+h1{
+    font-size: 3rem;/* de 3 ori mai mare decat dimensiunea de font a html-ului*/
+    text-shadow:0px 0px 1px black,0px 0px 2px black, 0px 0px 4px white,0px 0px 4px white,0px 0px 4px white;
+}
+
+
+
+main{
+    --main-border:1px solid grey;
+    background:var(--cl-light-t);
+    
+    border-left:var(--main-border);
+    border-right:var(--main-border);
+    padding-bottom: 2rem;
+    
+}
+
+h1>span{
+	font-family: 'Dancing Script', cursive;
+}
+
+ 
+#grid-pagina{
+    display:grid;
+    /* harta gridului; din harta rezulta 3 coloane*/
+    grid-template-areas: "welcome   welcome  welcome" 
+                         "promotii promotii  anunturi"
+                         "orar     orar      orar"
+                         "fig1     produse   produse"
+                         "fig2     produse   produse"
+                         "fig3     produse   produse"
+                         "index-intrebari     index-intrebari   index-intrebari";
+    padding:var(--padding-intern);
+
+    /*spatiu intre celulele de grid*/
+    grid-gap:2rem;
+}
+#grid-pagina section{
+    /*outline:1px solid orange;*/
+    border:10px dotted var(--culoare-roz-inchis-t);
+    border-image:url("../imagini/fulg-argintiu-dantela.png") 200 round;
+    padding:1rem;
+}
+#grid-pagina>figure{
+    width:100%;
+}
+figure{
+    margin:0;
+    padding:0;
+}
+figure img{
+    width:100%;
+}
+ 
+#welcome{
+    grid-area: welcome;
+}
+#promotii{
+    grid-area: promotii;
+}
+#anunturi{
+    grid-area: anunturi;
+}
+#orar{
+    grid-area: orar;
+}
+ 
+#fig1{
+    grid-area: fig1;
+}
+#fig2{
+    grid-area: fig2;
+}
+#fig3{
+    grid-area: fig3;
+}
+#produse{
+    grid-area: produse;
+}
+#index-intrebari{
+    grid-area: index-intrebari;
+}
+
+figcaption{
+    text-align:center;
+}
+
+p.intro{
+    font-family: 'Dancing Script', cursive;
+    font-size:2rem;
+    /*text-align: justify;
+    text-align-last: justify;*/
+    font-weight: bold;
+}
+
+#dv-prezentare{
+    
+    mask-repeat: no-repeat;
+    /*mask-position:10% 0, 0 50%;*/
+    mask-size:100% 100%;
+   
+    mask-image: linear-gradient(transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(transparent, black 10%, black 90%, transparent);
+    background-attachment: fixed;
+}
+#dv-prezentare img{
+    width:100%;
+}
+
+#dv-prezentare-1{
+    float:right;
+    mask-image: linear-gradient(to left,transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to left,transparent, black 10%, black 90%, transparent);
+    width:35%;
+}
+hr.prajituri{
+    margin-top:1rem;
+    width:100%;
+    height:2rem;
+    border:none;
+    background-position: 0px bottom;
+    background-image:url("../imagini/briosa-roz-mini-sp.png"),url("../imagini/trei-prajituri.png");
+    background-size: auto 50%, auto 100%;
+    background-repeat:repeat-x, space;
+    clear:both;
+}
+
+
+#welcome{
+    /*height:100%;*/
+}
+#welcome .anunt{
+    font-family: 'Dancing Script', cursive;
+    width:45%;
+    font-size:1.4rem;
+    float:left;
+    margin-top:0;
+}
+.intro-oferte{
+    display: flex;
+    min-height:50px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.intro-oferte div{
+    border:1px solid grey;
+    width:7rem;
+    margin-right:2rem;
+    line-height:50px;
+
+    /*am folosit fontul din Google API*/
+    font-family: 'Dancing Script', cursive;
+    font-size:1.5rem;
+    text-align: center;
+}
+
+#produse section{
+    border-image:none;
+    border-width: 1px;
+    border-style:solid;
+    border-color:var(--culoare-roz-inchis);
+    border-radius:1.5rem;
+    margin-bottom:0.7rem;
+    box-shadow:0px 0px 7px 2px var(--culoare-roz-inchis);;
+}
+
+#retete{
+    
+  padding-left:var(--padding-intern);
+  padding-right:var(--padding-intern);
+}
+
+
+
+
+.taburi-iframe a{
+    text-decoration:none;
+    width:100px;
+
+    /*ca sa se comporte ca un bloc in sensul ca sa ii dau dimensiuni
+    dar sa vina unele langa altele ca elemente inline, nu unele sub altele
+    
+    --- in task aveti de facut cu flexbox
+    */
+    display:inline-block;
+
+    border:1px solid var(--culoare-roz-inchis);
+
+    /*fara border in partea de jos*/
+    border-bottom: none;
+
+    /*rotunjesc doar colturile de sus:*/
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-image: linear-gradient(white, white 50%, var(--cl-marcare));
+    color:var(--culoare-mov);
+    transition:all 0.5s linear;
+    text-align: center;
+}
+
+.taburi-iframe a+a{
+    
+    margin-left:-5px;
+}
+
+.taburi-iframe a:hover{
+    color:white;
+
+    /*ca sa anulez efectul gradientului si sa se vada imaginea din spate*/
+    background-image: none;
+    background-color: var(--culoare-roz-inchis);
+}
+footer{
+    background-color: var(--culoare-roz-inchis);
+    color:white;
+    padding-left:var(--padding-intern);
+    padding-right:var(--padding-intern);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#link-top{
+    position: fixed;
+    display:block;
+    opacity:0.5;
+
+    bottom:0;
+    right:0;
+    width:50px;
+    height:50px;
+    background-color: white;
+    border-radius: 0.7rem;
+    border-bottom-right-radius: 0px;
+    border:1px solid var(--culoare-mov);
+    box-shadow:0px 0px 7px 2px inset var(--culoare-roz-inchis);
+    overflow:visible;
+}
+#link-top:hover{
+    opacity:1;
+}
+#triunghi{
+    position:absolute;
+    bottom:5px;
+    right:5px;
+    border-bottom:40px solid transparent;
+    border-top:0px solid transparent;
+    border-left:20px solid white;
+    border-right:20px solid white;
+    background-color:var(--culoare-mov);   
+    background-clip: border-box;
+    padding:0;
+    width:0;
+    box-sizing:border-box;
+}
+#triunghi::after{
+    position:absolute;
+    display: block;
+    left:-20px;
+    content:" ";
+    width:40px;
+    height:40px;
+    background-image: url("../imagini/briosa-roz-mini.png");
+    background-position: center 15px;
+    background-repeat:no-repeat;
+    background-size: 20px 20px;
+
+}
