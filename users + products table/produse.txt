@@ -1,0 +1,20 @@
+1	test	2008-11-11	piele	samsung	100	s20	6	{negru,maro}	samsungs20.jpg	Husa pentru telefonul tau!	t	cu clapa	99
+7	Coparski Husa	2000-12-14	silicon	apple	78	iPhone XS	5.5	{negru,alb}	samsungs20.jpg	Poate fi husa ta!	t	cover	78
+10	husa	2000-12-14	metal	samsung	70	s10	5.6	{negru,alb}	samsungs20.jpg	Poate fi husa ta!	t	cover	78
+12	husa	2000-12-14	metal	samsung	69	s10	5.5	{negru,alb}	samsungs20.jpg	Poate fi husa ta!	t	cover	78
+14	husa	2000-12-14	metal	samsung	100	s10	5.2	{negru,alb}	samsungs20.jpg	Poate fi husa ta!	t	cover	78
+2	test2	2008-11-10	piele	samsung	109	s20	6.1	{negru,maro}	samsungs20.jpg	Husa pentru telefonul tau!	f	cu clapa	99
+4	Anti-soc Husa	2000-12-14	piele	samsung	85	s20	5.5	{negru,alb}	samsungs20.jpg	Poate fi husa ta!	f	cover	78
+8	husa	2000-12-14	metal	apple	56	s10	5.6	{negru,alb}	samsungs20.jpg	Poate fi husa ta!	f	cover	78
+9	husa	2000-12-14	silicon	HTC	78	s10	5.9	{negru,alb}	samsungs20.jpg	Poate fi husa ta!	f	cover	78
+3	test3	2008-01-14	piele	samsung	100	s20	6.2	{roz,maro}	samsungs20.jpg	Husa pentru telefonul tau!	t	cu clapa	99
+5	Berski Husa	2000-12-14	silicon	apple	78	iPhone X	5.7	{gri,alb}	samsungs20.jpg	Poate fi husa ta!	t	cover	78
+6	husa	2000-12-14	metal	samsung	123	s10	5.5	{negru,roz}	samsungs20.jpg	Poate fi husa ta!	f	cover	78
+11	husa	2000-12-14	silicon	samsung	59	s10	5.5	{gri,alb}	samsungs20.jpg	Poate fi husa ta!	f	cover	78
+13	husa	2000-12-14	silicon	apple	99	iPhone 8	5.4	{gri,roz}	samsungs20.jpg	Poate fi husa ta!	f	cover	78
+15	husa	2000-12-14	metal	apple	55	iPhone X PRO	5.5	{negru,gri}	samsungs20.jpg	Poate fi husa ta!	f	cover	78
+16	husa	2000-12-14	metal	apple	78	iPhone 7	4.2	{roz,alb}	samsungs20.jpg	Poate fi husa ta!	t	cover	78
+17	husa	2000-12-14	silicon	samsung	78	s10	5.3	{gri,alb}	samsungs20.jpg	Poate fi husa ta!	f	cover	78
+18	husa	2000-12-14	metal	apple	20	iPhone 13	5.1	{gri,roz}	samsungs20.jpg	Poate fi husa ta!	t	cover	78
+19	husa	2000-12-14	silicon	samsung	50	s10	5.4	{maro,alb}	samsungs20.jpg	Poate fi husa ta!	f	cover	78
+20	husa	2000-12-14	metal	samsung	78	s10	5.5	{roz,maro}	samsungs20.jpg	Poate fi husa ta!	t	cover	78

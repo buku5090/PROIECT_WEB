@@ -1,0 +1,4 @@
+CREATE USER nume_utilizator WITH ENCRYPTED PASSWORD 'parola';
+GRANT ALL PRIVILEGES ON DATABASE nume_baza_date TO nume_utilizator ;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO nume_utilizator;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO nume_utilizator;
