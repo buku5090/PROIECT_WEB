@@ -1,0 +1,14 @@
+1. id
+2. nume
+3. descriere
+4. imagine
+5. material(silicon, plastic)
+6. tip(cu clapa, doar pe spate, etc.)
+7. pret
+8. diagonala
+9. data lansarii modelului pentru husa
+10. marca
+11. modelul
+13. culori disponibile
+14. rezistenta la soc
+15. greutate
