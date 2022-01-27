@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta name="keywords" content="husa,telefon,silicon,personalizata,samsung,iphone,huawei,xiaomi,htc">
+        <meta name="description" content="Cele mai bune huse pentru telefonul tau, la cel mai bun pret.">
+
+        <%- include("../fragmente/head.ejs") %>
+
+        <link rel="stylesheet" href="/resurse/temp/galerie-animata.css">
+        <link rel="stylesheet" href="/resurse/css/table_index.css">
+        <title>Husse</title>
+        
+    </head>
+    <body>
+        <%- include("../fragmente/header.ejs") %>
+    <main>
+        <div id="container">
+            <div id="div1">
+                <div id="galerie-animata" class="galerie">
+                    <div id="derulant">
+                        <%
+                            for (let imag of locals.imagini_an){ 
+                        %>
+                        <figure>
+                            <picture>
+                                <source srcset="/<%- imag.mic %>" media="(max-width:700px)">
+                                <img src="<%- locals.cale_an %><%- imag.fisier %>" alt="<%- imag.titlu %>" width="400" height="350">
+                            </picture>
+                            <figcaption><%- imag.descriere %> </figcaption>
+                        </figure>
+                        <% } %>
+                    </div>
+
+                </div>
+            </div>
+            <div id="div2">
+                <section id="section_table">
+                    <p><strong>ORARUL NOSTRU</strong></p>
+                    <div id="div-table">
+                        <table id="table-orar">
+                            <thead>
+                                <tr>
+                                    <th> Zi</th>
+                                    <th> Tura de dimineata</th>
+                                    <th> Pauza</th>
+                                    <th> Tura de seara</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    
+                                    <td>Marti</td>
+                                    <td>9-12</td>
+                                    <td>12-14</td>
+                                    <td>14-21</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>Miercuri</td>
+                                    <td>9-11</td>
+                                    <td>11-13</td>
+                                    <td>14-21</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>Joi</td>
+                                    <td>9-11</td>
+                                    <td>11-13</td>
+                                    <td>14-21</td>
+                                </tr>
+                                <tr>
+                                    <td>Vineri</td>
+                                    <td>9-12</td>
+                                    <td>12-14</td>
+                                    <td>14-19</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Weekend</td>
+                                    <td rowspan="2">10-12</td>
+                                    <td>12-13(sambata)</td>
+                                    <td>13-16(sambata)</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>-</td>
+                                    <td>inchis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <div id="div3">
+                <div id="stil-video">
+                    <video id="video-div3" playsinline autoplay loop muted poster="/resurse/imaginipoza.jpg" preload="auto" controls>
+                        <source src="../resurse/videos/videoclip_ad.mp4" type="video/mp4">
+                        <source src="../resurse/videos/videoclip_ad.ogv" type="video/ogv">
+                        <track default src="../resurse/videos/vtt/subtitles-ro.vtt" kind="captions" srclang="ro" label="romana">
+                        <track src="../resurse/videos/vtt/subtitles-en.vtt" kind="captions" srclang="en" label="engleza">
+                            
+                    </video>
+                </div>
+            </div>
+            <div id="div4">
+                <section id="welcome">
+                    <p>Locatia clinetului: <%- locals.locatie %></p>
+                    <h2>Bun venit</h2>
+                    <hr class="style-hr">
+                    <!--ETAPA 10-->
+                    <p>Gasiti aici cele mai bune <b>huse</b>, la cel mai bun pret.</p>
+                    <p><strong>Reduceri de pana la 20%</strong> in urmatoare 2 saptamani!</p>
+                    <p>Cea mai ieftina husa la <s>20 RON</s> <ins>15 RON</ins></p>
+                </section>
+            </div>
+            <div id="div5">
+                <section>
+                    
+                    <h2>
+                        Utilizatori ONLINE:
+                        
+                    </h2>
+                    <hr class="style-hr">
+                    <p id="p_user">
+                        <%- 
+                            locals.ip
+                        %>
+                    </p>
+                    <%
+                    dataServer=new Date();
+                    sirData=dataServer.getHours()+":"+dataServer.getMinutes()+":"+dataServer.getSeconds()
+    
+                    %>
+                    <p>Ora server:<span id="data_server"><%= sirData %></span></p>
+                    <p>Ora client:<span id="data_client"></span></p>
+                    <script>
+                        function zero(nr){
+                            if (nr<10) return "0"+nr;
+                            return nr;
+                        }
+                        
+                        d=new Date()
+                        document.getElementById("data_client").innerHTML=zero(d.getHours())+":"+zero(d.getMinutes())+":"+zero(d.getSeconds());
+    
+                        function actualizeazaElemData(id_div){
+                            var data_div=document.getElementById(id_div);
+                            if (data_div.innerHTML!="")
+                            {
+                                var timp=data_div.innerHTML.split(":")
+                                var dt=new Date(2000,1,15, timp[0],timp[1], timp[2] );//nu conteaza data (am pus valori random pentru an, luna si zi) ci timpul
+                            }
+                            else
+                                var dt=new Date();
+                            dt.setSeconds(dt.getSeconds()+1)
+                            data_div.innerHTML=zero(dt.getHours())+":"+zero(dt.getMinutes())+":"+zero(dt.getSeconds());
+                        }
+                        function actualizeazaData(){
+                            actualizeazaElemData("data_client");
+                            actualizeazaElemData("data_server");
+                        }
+                        actualizeazaData()
+                        setInterval(actualizeazaData,1000)
+                    </script>
+                </section>
+                
+            </div>
+            <div id="div6">
+                <iframe name="ifr-video" src="https://www.youtube.com/embed/-6Luw6nDX7Q" id="iframex"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <div class="flex-container">
+                    <a href="https://www.youtube.com/embed/9i3gSRgdCUM" target="ifr-video" class="butoniframe">Idei ridicole pentru huse</a>
+                    <a href="https://www.youtube.com/embed/nXlUJFgffCg" target="ifr-video" class="butoniframe">Cele mai bune huse pentru constructori</a>
+                    <a href="https://www.youtube.com/embed/-6Luw6nDX7Q" target="ifr-video" class="butoniframe">Cele mai bune huse pentru telefonul tau!</a><br/>
+                </div>
+
+            </div>
+            <div id="div7">
+                <h2>7</h2>
+                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+                
+            </div>
+            <div id="div8">
+                <h2>8</h2>
+                <p>galerie</p>
+                <section id="galerie-statica">
+                    <div id="grid-galerie">
+                        <%
+                            for (let imag of locals.imagini){ 
+                                var nr=0;
+                                var d=new Date();
+                                if(Math.floor(d.getMinutes()/15)==imag.sfert_ora && nr<11){  
+                                    nr=nr+1;
+                        %>
+                        <figure>
+                            <picture>
+                                <source srcset="/<%- imag.mic %>" media="(max-width:700px)">
+                                <img id="i-galerie-stat" src="<%- locals.cale %><%- imag.fisier %>" alt="<%- imag.titlu %>" width="400" height="350">
+                            </picture>
+                            <figcaption><%- imag.descriere %> </figcaption>
+                        </figure>
+                        <% } %>
+                        <% } %>
+                    </div>
+
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </main>
+        <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>

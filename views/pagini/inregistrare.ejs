@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta name="keywords" content="husa,telefon,silicon,personalizata,samsung,iphone,huawei,xiaomi,htc">
+        <meta name="description" content="Cele mai bune huse pentru telefonul tau, la cel mai bun pret.">
+
+        <%- include("../fragmente/head.ejs") %>
+        <link rel="stylesheet" href="/resurse/css/inregistrare.css">
+
+        <title>Husse</title>
+        <script type="text/javascript" src="/resurse/js/inregistrare.js"></script>
+    </head>
+    <body>
+        <%- include("../fragmente/header.ejs") %>
+    <main>
+        <div class="afisaj date">
+            <h1 style="font-size: 30px;">Inregistrare utilizator</h1>
+            
+            <% if (locals.err !="") { %>
+                <%-include("../fragmente/formular", {action: "/inreg"}) %>
+        <% } %>
+        <% if(locals.raspuns) { %>
+        <%- locals.raspuns+"<br/>"%>
+        <% } %>
+        <% if(locals.err) { %>
+        <%- locals.err %>
+        <% } %>
+        </div>
+    </main>
+        <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>

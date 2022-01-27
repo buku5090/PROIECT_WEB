@@ -1,0 +1,118 @@
+    <div class="flex-cont-body">
+        <div id="divlogo">
+            <h3>Husse.ro</h3>
+            <span id="animated-icon">
+                <i class="fas fa-cog fa-spin"></i>
+            </span>
+        </div>
+    
+        <div id="section-title">
+            <p id="p-title">Husse.ro</p>
+        </div>
+    </div>
+    <nav id="mainnav">
+            <input id="toggle1" type="checkbox"/>
+            <label class="hamburger1" for="toggle1">
+              <div ></div>
+              <div ></div>
+              <div ></div>
+            </label>
+        
+            <nav id="divhead">
+                    <ul id="listameniu">
+                        <li class="li_meniu">
+                            <a href="/index" class="button"><i class="fas fa-home"></i><span id="span-icon-casa"> Acasă</span> 
+                            </a>
+                        </li>
+                        <li class="li_meniu dropdown" id="produse_meniu"><a href="/produsele_noastre" class="button">
+                            
+                                Produsele noastre</a>
+                            
+                                <ul id="navmaimulte" style="list-style: none;">
+                                    <div class="dropdown-content">
+                                        <li>
+                                            <a href="/produsele_noastre" class="butoanemeniu-c">
+                                            <i class="fas fa-arrow-right butoanemeniu-c" 
+                                                aria-hidden="true">
+                                            </i> Toate
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/produsele_noastre?tip=metal" class="butoanemeniu-c">
+                                                <i class="fas fa-arrow-right butoanemeniu-c" 
+                                                    aria-hidden="true">
+                                                </i> Huse din metal
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/produsele_noastre?tip=piele" class="butoanemeniu-c">
+                                                <i class="fas fa-arrow-right butoanemeniu-c" 
+                                                aria-hidden="true">
+                                            </i> Huse din piele
+                                            </a>   
+                                        </li>    
+                                        <li>
+                                            <a href="/produsele_noastre?tip=silicon" class="butoanemeniu-c">
+                                                <i class="fas fa-arrow-right butoanemeniu-c" 
+                                                aria-hidden="true">
+                                            </i> Huse din silicon
+                                            </a>   
+                                        </li>                  
+                                    </div>
+                                </ul>
+
+                        </li>
+                        <li class="li_meniu"><a href="/index#" class="button">Personalizează-ți husa!</a></li>
+                        <li class="li_meniu dropdown">
+                            <a href="javascript:void(0)" class="button dropbtn" id="butonmaimulte">Mai multe</a>
+                            <ul id="navmaimulte" style="list-style: none;">
+                                <div class="dropdown-content">
+                                    <li>
+                                        <a href="#" class="butoanemeniu-c">
+                                        <i class="fas fa-arrow-right butoanemeniu-c" 
+                                            aria-hidden="true">
+                                        </i> Cos de cumparaturi
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/inregistrare" class="butoanemeniu-c">
+                                            <i class="fas fa-arrow-right butoanemeniu-c" 
+                                            aria-hidden="true">
+                                        </i> Despre
+                                        </a>   
+                                    </li>                   
+                                </div>
+                            </ul>
+                        </li>
+                        <% if (locals.utilizator) { %>
+                            <li class="li_meniu"><a href="/profil" class="button"><%- locals.utilizator.username %></a></li>
+                            <li class="li_meniu"><a href="/logout" class="button">Logout</a></li>
+                        <% }  %>
+                        <% if (locals.utilizator && locals.utilizator.rol=="admin") { %> 
+                            <li class="li_meniu"><a href="/useri" class="button">Utilizatori</a></li>
+                        <% } %>
+                        <% if (!locals.utilizator) { %>
+                            <li class="li_meniu"><a href="/inregistrare" class="button">Inregistrare</a></li>
+                        <% }  %>
+                    </ul>
+            </nav>
+        </nav>
+        <% if (!locals.utilizator) { %>
+			
+            <p>Va rugam sa va logati: <br/>
+            <form id="login" method="post" action="/login">
+                
+                <label>
+                    Username: <input type="text" name="username" value="" class="login">
+                </label>
+                <label>
+                    Parola: <input type="password" name="parola" value="" class="login">
+                </label>
+                
+                <input type="submit" value="Login">
+            </form>
+            <% if(locals.mesajLogin) {%>
+                <p style='color:red'>Eroare: <%- locals.mesajLogin %></p>
+            <% } %>
+        <% }        
+        %>

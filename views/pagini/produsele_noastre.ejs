@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta name="keywords" content="paine,prajituri,proaspata">
+        <meta name="description" content="Cea mai buna paine din romania">
+
+        <%- include("../fragmente/head.ejs") %>
+
+        <link rel="stylesheet" href="/resurse/css/produsele_noastre.css">
+        <link rel="stylesheet" href="/resurse/css/filtre.css">
+
+        <title>Husse</title>
+        
+    </head>
+    <body>
+        <%- include("../fragmente/header.ejs") %>
+    <main>
+        <section id="filtre">
+            <div class="input_filtre">
+                <label>Model:
+                    <input type="text" id="input_model_id">
+                </label>
+                <br>
+                <label>Diagonala(INCH):
+                    <span>4</span>
+                    <input type="range" id="input_diagonala_id" min=4 max=7 step="0.1" value="4" >
+                    <span>7</span>
+                </label>
+                <br/>
+                <span>Rezistent la soc</span>
+                <br>
+                <label>Da:
+                    <input type="radio" name="alegere" value="1">
+                </label>
+                <label>Nu:
+                    <input type="radio" name="alegere" value="2">
+                </label>
+                <label>Toate:
+                    <input type="radio" checked name="alegere" value="3">
+                </label>
+                <div class="filtre-checkbox">
+                    <label>
+                        <input type="checkbox" name="marca_ckb" checked value="samsung">
+                    </label>samsung
+                    <label>
+                        <input type="checkbox" name="marca_ckb" checked value="apple">
+                    </label>apple
+                    <label>
+                        <input type="checkbox" name="marca_ckb" checked value="huawei">
+                    </label>huawei
+                </div>
+                <label>Aparut in anul:
+                    <select id="select-an" name="data-an-aparitie" class="select-data-aparitie">
+                        <option value="">Oricare</option>
+                        <option value="2000">2000</option>
+                        <option value="2008">2008</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </label><br>
+                <label>Culoare:
+                    <select id="select-multiplu-culoare-husa" name="select-multiplu-culoare-husa" class="select-multiplu" multiple>
+                        <option value="toate">Toate</option>
+                        <option value="negru">Negru</option>
+                        <option value="alb">Alb</option>
+                        <option value="maro">Maro</option>
+                        <option value="gri">Gri</option>
+                        <option value="roz">Roz</option>
+                    </select>
+                </label><br>Cauta in descriere!
+                <textarea id="textarea-d" name="textarea-descriere-nume" rows="3" cols="10" placeholder="Cauta in descriere!"></textarea>
+                <br> <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+            </div>
+            <button class="buton_f" id="buton_filtrare">
+                Filtreaza!
+            </button>
+            <button class="buton_f" id="buton_asc">A
+                <i class="fas fa-sort-amount-up"></i>
+            </button>
+            <button class="buton_f" id="buton_desc">D
+                <i class="fas fa-sort-amount-down"></i>
+            </button>
+            <button class="buton_f" id="buton_reset" onclick="window.location.href = '/produsele_noastre'">
+                Reseteaza
+            </button>
+            <script src="/resurse/js/filtre.js">
+                
+            </script>
+            
+        </section>
+       
+        <section id="produse">
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                    <article class="produs" >
+                        <h3 class="nume"><a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        
+                        <div class="info-prod">
+                            <table style="height: 300px; width:auto">
+                                <tr>
+                                  <th>Caracteristica</th>
+                                  <th>Valoare</th>
+                                </tr>
+                                <tr>
+                                  <td>Pret</td>
+                                  <td><span class="val-pret"><%- prod.pret%></span>RON</a></td>
+                                </tr>
+                                <tr>
+                                  <td>Material</td>
+                                  <td><span class="val-material"><%- prod.material%></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Culori</td>
+                                    <td><span class="val-culori-disponibile"><%- prod.culori_disponibile%> </span></td>
+                                </tr>
+                                <tr>
+                                    <% 
+                                            var d="";
+                                            var zi="";
+                                            var nume_luna="";
+                                            var an="";
+                                            var zi_saptamana="";
+                                            d=prod.data_lansare;
+                                            nume_luna=String(d).substr(3,4);
+                                            an=String(d).substr(7,8);
+                                            zi=an.substr(0,3);
+                                            //01-12-200
+                                            an=an.substr(3);
+                                            zi_saptamana=String(d).substr(0,3);
+                                            if(nume_luna==" Apr")
+                                                nume_luna="Aprilie";
+                                            if(nume_luna==" Jan")
+                                                nume_luna="Ianuarie";
+                                            if(nume_luna==" Feb")
+                                                nume_luna="Februarie";
+                                            if(nume_luna==" Mar")
+                                                nume_luna="Martie";
+                                            if(nume_luna==" May")
+                                                nume_luna="Mai";
+                                            if(nume_luna==" Jun")
+                                                nume_luna="Iunie";
+                                            if(nume_luna==" Jul")
+                                                nume_luna="Iulie";
+                                            if(nume_luna==" Oct")
+                                                nume_luna="Octombrie";
+                                            if(nume_luna==" Sep")
+                                                nume_luna="Septembrie";
+                                            if(nume_luna==" Nov")
+                                                nume_luna="Noiembrie";
+                                            if(nume_luna==" Dec")
+                                                nume_luna="Decembrie";
+                                            if(nume_luna==" Aug")
+                                                nume_luna="August";
+
+                                            if(zi_saptamana=="Mon")
+                                                zi_saptamana="Luni";
+                                            if(zi_saptamana=="Tue")
+                                                zi_saptamana="Marti";
+                                            if(zi_saptamana=="Wed")
+                                                zi_saptamana="Miercuri";
+                                            if(zi_saptamana=="Thu")
+                                                zi_saptamana="Joi";
+                                            if(zi_saptamana=="Fri")
+                                                zi_saptamana="Vineri";
+                                            if(zi_saptamana=="Sat")
+                                                zi_saptamana="Sambata";
+                                            if(zi_saptamana=="Sun")
+                                                zi_saptamana="Duminca";
+                                        %>
+                                    <td>Data</td>
+                                    <td><span class="data"><%- zi %> <%- nume_luna %> <%- an %>(<%- zi_saptamana %>) </span></td>
+                                </tr>
+                                <tr>
+                                    <%
+                                                var rez="";
+                                                if(prod.rezistenta_soc==true)
+                                                    rez="Da";
+                                                else
+                                                    rez="Nu";
+                                        %>
+                                    <td>Rezistenta soc</td>
+                                    <td><span class="rez_soc"><%- rez %></span></td>
+                                </tr>
+                                
+                              </table>
+                              <div class="descriere-produs">
+                                <a class="val-descriere" id="descriere"><%- prod.descriere %></a>
+                                <h3>Categorie: <%- prod.tip %></h3>
+                              </div>
+                            
+                        </div>
+                        <div>
+                            <figure id="poza_produs">
+                                <a href="/produs/<%-prod.id %>" ><img src="/resurse/produse/<%- prod.imagine %>" style="width:auto;height:350px;padding:10px;" alt="[imagine <%- prod.nume %>]" /></a>
+                            </figure>
+                        </div>
+                        <label class="selecteaza-cos">
+                            Selectează:<br/>
+                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                        </label>
+                    </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+        <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>
