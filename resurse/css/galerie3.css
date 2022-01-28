@@ -1,0 +1,91 @@
+
+
+
+*{
+    margin:0;
+    padding:0;
+    }
+    
+    body{
+        padding:3rem;
+    }
+    .galerie{
+        width:400px;
+        height:300px;
+        border:1px solid black;
+        position:relative;
+        overflow:hidden;
+    
+      border:1px solid black;
+        margin-bottom:5rem;
+    }
+    .galerie figcaption{
+        position:absolute;
+        bottom:0;
+        background:rgba(255,255,255,0.7);
+        width:100%;
+        text-align:center;
+    }
+    .galerie figure{
+        position:relative;
+        width:400px;
+        height:300px;
+    }
+    
+    
+    #galerie_exemplu figure{	
+        position:absolute;
+        left:0;
+        top:0;
+        z-index:0;
+        animation-name:gal_exemplu;
+        animation-timing-function:linear;
+        animation-iteration-count:infinite;
+        animation-fill-mode:forwards;
+        animation-duration:21s;	
+        transform-origin:0px center;
+    }
+
+    #galerie_exemplu:hover figure{	
+        animation-play-state: paused;
+    }
+
+    #galerie_exemplu figure:nth-of-type(7){/* cea mai de deasupra*/
+        animation-delay:0s;
+    }
+    #galerie_exemplu figure:nth-of-type(6){
+        animation-delay:3s;
+    }
+    #galerie_exemplu figure:nth-of-type(5){
+        animation-delay:6s;
+    }
+    #galerie_exemplu figure:nth-of-type(4){
+        animation-delay:9s;
+    }
+    #galerie_exemplu figure:nth-of-type(3){
+        animation-delay:12s;
+    }
+    #galerie_exemplu figure:nth-of-type(2){
+        animation-delay:15s;
+    }
+    #galerie_exemplu figure:nth-of-type(1){
+        animation-delay:18s;
+    }
+    
+    @keyframes gal_exemplu{ 
+        0% {z-index:10;opacity:1;} /*perioada 0-5% in care se afiseaza fara efect */
+        7.142857% {transform: scale(1,1) rotate(0deg); }
+        12%{opacity:1;} /* de  aici doresc sa descresc si opacitatea;*/
+        
+        14.285714%{z-index:10;opacity:0;transform: scale(1,0.2) rotate(90deg);}
+        14.285715%{z-index:-10; transform:skewX(0deg);}/* il ascund cat mai in spate sa nu vina peste imaginile care erau mai sus in html decat el*/
+        
+        85.714287%{opacity:0;transform: scale(1,1) rotate(0deg);z-index:-10;}	
+        85.714288%{z-index:0;}/*setez z-index la 0 ca sa revina la ordinea normala de afisare*/
+        100%{opacity:1;z-index:0;}
+    }
+    
+    
+    
+   
+    

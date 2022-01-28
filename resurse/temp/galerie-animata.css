@@ -1,0 +1,147 @@
+#derulant {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: absolute;
+  animation-name: gal1;
+}
+
+#derulant figure:nth-child(1) {
+  animation-name: fig1;
+}
+
+#derulant figure:nth-child(2) {
+  animation-name: fig1;
+}
+
+@keyframes fig1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.galerie {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 350px;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.galerie figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  text-align: center;
+}
+
+.galerie figure {
+  position: relative;
+  width: 400px;
+  height: 350px;
+}
+
+#derulant:hover {
+  animation-play-state: paused;
+}
+
+#galerie-animata #derulant {
+  display: grid;
+  width: 1200px;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: 350px 350px 350px;
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: animatie_gal;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 30s;
+}
+
+.galerie figcaption {
+  bottom: 0px;
+}
+
+@keyframes animatie_gal {
+  0% {
+    top: 0px;
+    left: 0;
+  }
+  11.5% {
+    top: -350px;
+    left: 0;
+  }
+  12.5% {
+    top: -350px;
+    left: 0;
+  }
+  24% {
+    top: -350px;
+    left: -800px;
+  }
+  25% {
+    top: -350px;
+    left: -800px;
+  }
+  36.5% {
+    top: -350px;
+    left: -400px;
+  }
+  37.5% {
+    top: -350px;
+    left: -400px;
+  }
+  49% {
+    top: 0px;
+    left: -400px;
+  }
+  50% {
+    top: 0px;
+    left: -400px;
+  }
+  61.5% {
+    top: 0px;
+    left: -800px;
+  }
+  62.5% {
+    top: 0px;
+    left: -800px;
+  }
+  74% {
+    top: -700px;
+    left: -800px;
+  }
+  75% {
+    top: -700px;
+    left: -800px;
+  }
+  86.5% {
+    top: -700px;
+    left: 0px;
+  }
+  87.5% {
+    top: -700px;
+    left: 0px;
+  }
+  99% {
+    top: -700px;
+    left: -400px;
+  }
+  100% {
+    top: -700px;
+    left: -400px;
+  }
+}

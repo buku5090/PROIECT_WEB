@@ -1,0 +1,82 @@
+*{
+    font-size: 20px;
+}
+#div8, #div3, #div6, #div1{
+    display: none;
+}
+
+#mainnav{
+    margin-top:0px;
+    page-break-after: always;
+}
+
+#table-orar td, #table-orar th{
+    border:1px solid black;
+    padding:0.2rem;
+  }
+
+#animated-icon{
+    display: none;
+}
+
+#divlogo{
+    text-align: center;
+}
+
+#divlogo h3{
+    width: 50vw;
+    border: 2px solid blueviolet;
+    border-style: double;
+    font-size: 40px;
+    padding: 10px;
+    
+}
+
+#divlogo{
+    padding-left: 50vw;
+}
+
+
+main{
+    margin-top: 150px;
+}
+
+#toggle1 {
+    display: none;
+  }
+#section-title{
+    width: 100vw;
+    
+    text-align: center;
+}
+
+#p-title{
+    font-size: 40px;
+}
+
+.flex-cont-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+footer{
+    page-break-before: always;
+}
+#watermark{
+    height: 10vh;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    opacity: 1;
+    position: fixed;
+    left: 0;
+    bottom:0;
+    display: block;
+  }
+
+#p-wmk{
+    font-size: fit-content;
+    color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    left:20vw;
+}

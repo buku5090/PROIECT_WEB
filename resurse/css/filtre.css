@@ -1,0 +1,31 @@
+#filtre{
+    position: relative;
+    align-items: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 350px;
+    background-color: rgb(223, 215, 215);
+}
+
+.input_filtre{
+    position: relative;
+    padding: 5px;
+    float: left;
+}
+
+
+#buton_filtrare{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    bottom: 5px;
+    right: 5px;
+}
+
+.filtre-checkbox{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items: center;
+}
+
