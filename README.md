@@ -1,2 +1,2 @@
 # PROIECT_WEB
-Un magazin online pentru huse, realizat de mine in care folosit mai multe limbaje de programare, precum JavaScript, HTML, CSS, SCSS, dar si SQL pentru baza de date.
+An online shop for phonecases, where i used a lot of technologies like CSS, SCSS, HTML, JAVASCRIPT (+ Node.JS) and SQL in POSTGRESQL for database.
